@@ -4,14 +4,14 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const logout = () => {
+  const toHome = () => {
     navigate('');
   };
 
   return (
     <div className="navbar">
       <div>
-        <button type="button" onClick={logout}>🔚</button>
+        <button type="button" onClick={toHome}>🔚</button>
       </div>
       <div>
         🔥
