@@ -54,18 +54,33 @@ const Home = () => {
               <div className={styles.img_container}>
                 <Card.Img className={styles.image} src={`https://www.cryptocompare.com${item.CoinInfo.ImageUrl}`} />
               </div>
-              <div className={styles.cardDetails}>
-                <Card.Title className="text-muted"><h6>{item.CoinInfo.FullName}</h6></Card.Title>
-                <Card.Text className={styles.text}>
-                  <h6>{item.CoinInfo.Id}</h6>
-                  <h6>{item.CoinInfo.Name}</h6>
-                  <h6>{item.RAW.USD.PRICE.toFixed(2)}</h6>
-                  <h6>
-                    {(item.RAW.USD.MKTCAP / 1000000000).toFixed(2)}
-                    {' '}
-                    $(B)
-                  </h6>
-                </Card.Text>
+              <div>
+                <div className={styles.img_container}>
+                  <Card.Img className={styles.image} src={`https://www.cryptocompare.com${item.CoinInfo.ImageUrl}`} />
+                </div>
+                <div className={styles.cardDetails}>
+                  <Card.Title className="text-muted"><h6>{item.CoinInfo.FullName}</h6></Card.Title>
+                  <Card.Text className={styles.text}>
+                    <div>
+                      <div className={styles.textContainer}>
+                        <h6>{item.CoinInfo.Name}</h6>
+                        <h6>
+                          $
+                          {' '}
+                          {item.RAW.USD.PRICE.toFixed(2)}
+                        </h6>
+                      </div>
+                      <div className={styles.textContainer}>
+                        <h6>{item.CoinInfo.Id}</h6>
+                        <h6>
+                          $(B)
+                          {' '}
+                          {(item.RAW.USD.MKTCAP / 1000000000).toFixed(2)}
+                        </h6>
+                      </div>
+                    </div>
+                  </Card.Text>
+                </div>
               </div>
             </Card.Body>
           </Card>
