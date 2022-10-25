@@ -29,43 +29,47 @@ const Home = () => {
         <Card className={styles.card}>
           <Card.Body className={styles.cardBody}>
             <div className={styles.img_container}>
-              <Card.Img className={styles.Img} src={graphImg} />
+              <Card.Img className={styles.image} src={graphImg} />
             </div>
-            <div>
+            <div className={styles.cardDetails}>
               <Card.Title className={styles.title}>Crypto Tracker</Card.Title>
               <Card.Text className={styles.text}>
-                <strong>Rank</strong>
-                <strong>FullName</strong>
-                <strong>Price</strong>
-                <strong>Market Cap</strong>
+                <h6>Rank</h6>
+                <h6>FullName</h6>
+                <h6>Price</h6>
+                <h6>Market Cap</h6>
               </Card.Text>
             </div>
           </Card.Body>
         </Card>
       </div>
-      <div>
-        <Card className={styles.card}>
-          {arr.map((item) => (
-            <Card.Body
-              className={styles.cardBody}
-              key={item.CoinInfo.Id}
-              onClick={toDetails}
-            >
+      <div className={styles.coinsContainer}>
+        {arr.map((item) => (
+          <Card
+            className={styles.card}
+            key={item.CoinInfo.Id}
+            onClick={toDetails}
+          >
+            <Card.Body className={styles.cardBody}>
               <div className={styles.img_container}>
-                <Card.Img className={styles.Img} src={`https://www.cryptocompare.com${item.CoinInfo.ImageUrl}`} />
+                <Card.Img className={styles.image} src={`https://www.cryptocompare.com${item.CoinInfo.ImageUrl}`} />
               </div>
-              <div>
-                <Card.Title className={styles.title}>{item.CoinInfo.FullName}</Card.Title>
+              <div className={styles.cardDetails}>
+                <Card.Title className="text-muted"><h6>{item.CoinInfo.FullName}</h6></Card.Title>
                 <Card.Text className={styles.text}>
-                  <strong>{item.CoinInfo.Id}</strong>
-                  <strong>{item.CoinInfo.Name}</strong>
-                  <strong>{item.RAW.USD.PRICE.toFixed(2)}</strong>
-                  <strong>{item.RAW.USD.MKTCAP}</strong>
+                  <h6>{item.CoinInfo.Id}</h6>
+                  <h6>{item.CoinInfo.Name}</h6>
+                  <h6>{item.RAW.USD.PRICE.toFixed(2)}</h6>
+                  <h6>
+                    {(item.RAW.USD.MKTCAP / 1000000000).toFixed(2)}
+                    {' '}
+                    $(B)
+                  </h6>
                 </Card.Text>
               </div>
             </Card.Body>
-          ))}
-        </Card>
+          </Card>
+        ))}
       </div>
     </>
   );
