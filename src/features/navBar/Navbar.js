@@ -6,6 +6,7 @@ const Navbar = () => {
 
   const toHome = () => {
     navigate('');
+    localStorage.removeItem('id');
   };
 
   return (

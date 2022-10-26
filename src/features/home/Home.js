@@ -9,8 +9,9 @@ import graphImg from '../assets/graphImg.jpg';
 const Home = () => {
   const navigate = useNavigate();
 
-  const toDetails = () => {
+  const toDetails = (e) => {
     navigate('details');
+    localStorage.setItem('id', e.target.parentElement.id);
   };
 
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Home = () => {
     if (arr.length === 0) {
       dispatch(fetchAllAsync());
     }
-  }, [dispatch]);
+  }, []);
 
   return (
     <>
@@ -32,13 +33,31 @@ const Home = () => {
               <Card.Img className={styles.image} src={graphImg} />
             </div>
             <div className={styles.cardDetails}>
-              <Card.Title className={styles.title}>Crypto Tracker</Card.Title>
-              <Card.Text className={styles.text}>
-                <h6>Rank</h6>
-                <h6>FullName</h6>
-                <h6>Price</h6>
-                <h6>Market Cap</h6>
-              </Card.Text>
+              <div>
+                <Card.Title className={styles.title}>Crypto Tracker</Card.Title>
+              </div>
+              <div>
+                <div>
+                  <Card.Text className={styles.text}>
+                    <strong>Rank</strong>
+                  </Card.Text>
+                </div>
+                <div>
+                  <Card.Text className={styles.text}>
+                    <strong>FullName</strong>
+                  </Card.Text>
+                </div>
+                <div>
+                  <Card.Text className={styles.text}>
+                    <strong>Price</strong>
+                  </Card.Text>
+                </div>
+                <div>
+                  <Card.Text className={styles.text}>
+                    <strong>Market Cap</strong>
+                  </Card.Text>
+                </div>
+              </div>
             </div>
           </Card.Body>
         </Card>
@@ -48,38 +67,54 @@ const Home = () => {
           <Card
             className={styles.card}
             key={item.CoinInfo.Id}
-            onClick={toDetails}
           >
-            <Card.Body className={styles.cardBody}>
-              <div className={styles.img_container}>
-                <Card.Img className={styles.image} src={`https://www.cryptocompare.com${item.CoinInfo.ImageUrl}`} />
-              </div>
+            <Card.Body
+              className={styles.cardBody}
+              id={item.CoinInfo.Id}
+              onClick={toDetails}
+            >
               <div>
                 <div className={styles.img_container}>
                   <Card.Img className={styles.image} src={`https://www.cryptocompare.com${item.CoinInfo.ImageUrl}`} />
                 </div>
+              </div>
+              <div>
                 <div className={styles.cardDetails}>
-                  <Card.Title className="text-muted"><h6>{item.CoinInfo.FullName}</h6></Card.Title>
-                  <Card.Text className={styles.text}>
+                  <div>
                     <div>
-                      <div className={styles.textContainer}>
-                        <h6>{item.CoinInfo.Name}</h6>
-                        <h6>
-                          $
-                          {' '}
-                          {item.RAW.USD.PRICE.toFixed(2)}
-                        </h6>
+                      <Card.Title className="text-muted"><h6>{item.CoinInfo.FullName}</h6></Card.Title>
+                    </div>
+                    <div className={styles.textContainerOutter}>
+                      <div className={styles.textContainerInner}>
+                        <div>
+                          <Card.Text className={styles.text}>
+                            <strong>{item.CoinInfo.Name}</strong>
+                          </Card.Text>
+                        </div>
+                        <div>
+                          <Card.Text className={styles.text}>
+                            $
+                            {' '}
+                            {item.RAW.USD.PRICE.toFixed(2)}
+                          </Card.Text>
+                        </div>
                       </div>
-                      <div className={styles.textContainer}>
-                        <h6>{item.CoinInfo.Id}</h6>
-                        <h6>
-                          $(B)
-                          {' '}
-                          {(item.RAW.USD.MKTCAP / 1000000000).toFixed(2)}
-                        </h6>
+                      <div className={styles.textContainerInner}>
+                        <div>
+                          <Card.Text className={styles.text}>
+                            {item.CoinInfo.Id}
+                          </Card.Text>
+                        </div>
+                        <div>
+                          <Card.Text className={styles.text}>
+                            $(B)
+                            {' '}
+                            {(item.RAW.USD.MKTCAP / 1000000000).toFixed(2)}
+                          </Card.Text>
+                        </div>
                       </div>
                     </div>
-                  </Card.Text>
+                  </div>
                 </div>
               </div>
             </Card.Body>
