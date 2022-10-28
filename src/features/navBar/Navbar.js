@@ -15,6 +15,9 @@ const Navbar = () => {
         <button type="button" onClick={toHome}>🔚</button>
       </div>
       <div>
+        {localStorage.getItem('id') === null ? 'overall statistics' : 'coin stats'}
+      </div>
+      <div>
         🔥
       </div>
     </div>
