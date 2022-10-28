@@ -57,7 +57,11 @@ const Details = () => {
                 </div>
               </Card.Body>
             </Card>
-            <Card key={item.CoinInfo.Id} id={item.CoinInfo.Id} className={styles.card2}>
+            <Card
+              key={item.CoinInfo.Id}
+              id={item.CoinInfo.Id}
+              className={styles.card2}
+            >
               <Card.Body className={styles.cardLBody}>
                 <div className={styles.cardLDetails}>
                   <div>
