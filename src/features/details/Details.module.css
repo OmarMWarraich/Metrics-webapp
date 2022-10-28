@@ -1,0 +1,32 @@
+.container {
+  background-color: darkblue;
+}
+
+.container .card {
+  border: 1px solid #002147;
+  border-radius: 0;
+}
+
+.cardBody {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: darkblue;
+}
+
+.cardLBody {
+  display: flex;
+  flex-direction: column;
+  background-color: darkblue !important;
+  border: 1px solid #002147 !important;
+  border-radius: 0;
+}
+
+.card2 {
+  border: 2px solid #002147 !important;
+}
+
+.LText {
+  display: flex;
+  justify-content: space-between;
+}
