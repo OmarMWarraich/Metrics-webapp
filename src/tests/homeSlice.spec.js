@@ -1,6 +1,6 @@
 import homeReducer, {
   fetchAllAsync,
-} from './homeSlice';
+} from '../features/home/homeSlice';
 
 describe('home reducer', () => {
   const initialState = [{

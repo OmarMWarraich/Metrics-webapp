@@ -63,6 +63,7 @@ Give a ⭐️ if you like this project!
 
 - Thank You [Microverse](www.microverse.org) team.
 - Thanks to everyone who will get time to check this code and suggest any [issues](https://github.com/OmarMWarraich/Metrics-webapp/issues)
+- Original design idea by Nelson Sakwa on Behance.
 
 ## License
 

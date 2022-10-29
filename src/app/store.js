@@ -5,7 +5,8 @@ const rootReducer = combineReducers({
   home: homeReducer,
 });
 
-/* eslint-disable-next-line import/prefer-default-export */
-export const store = configureStore({
+const store = configureStore({
   reducer: rootReducer,
 });
+
+export default store;
