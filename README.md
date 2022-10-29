@@ -19,7 +19,11 @@
 
 ## Live Demo 
 
-[Click Me!](https://crypto-tracker.netlify.app)
+[Click Me!](https://cryptotracker-ova.netlify.app)
+
+## Video Presentation
+
+[Click Me!](https://www.loom.com/share/db887315c94540e0a0f42278057ea8b3)
 
 ## Getting Started
 
