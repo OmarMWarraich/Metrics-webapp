@@ -30,7 +30,7 @@ const Home = () => {
         <Card className={styles.card}>
           <Card.Body className={styles.cardBody}>
             <div className={styles.img_container}>
-              <PieToBarChart />
+              <PieToBarChart className={styles.pie} />
             </div>
             <div className={styles.cardDetails}>
               <div>

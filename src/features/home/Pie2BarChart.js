@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactEcharts from 'echarts-for-react';
+import styles from './Home.module.css';
 
 const dataset = {
   dimensions: ['name', 'score'],
@@ -62,7 +63,7 @@ const PieToBarChart = () => {
 
   return (
     <>
-      <div style={{ width: '150px', height: '100px' }}>
+      <div className={styles.PieToBarChart}>
         <ReactEcharts option={currentChart} style={{ width: '100%', height: '100%' }} />
       </div>
     </>
