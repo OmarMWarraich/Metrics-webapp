@@ -2,7 +2,8 @@
 
 # Crypto Tracker
 
-> Crypto Tracker is a web application that allows users to check a list of metrics (numerical data) about the status of Cryptocurrencies.
+>  Stay on top of the crypto market with our real-time tracker app. Get up-to-date information on the top 20 cryptocurrencies from the CryptoCompare API. View market trends at a glance and dive deeper into the financial details of each coin with just a click. Keep your finger on the pulse of the crypto world with our easy-to-use app.
+
 
 ## Tools & Technologies
 
